@@ -1,0 +1,10 @@
+---
+- name: Copiar ficheros
+  hosts: Tools
+  tasks:
+    - name: Copiar un archivo
+      copy:
+        remote_src: true
+        src: /home/sniper/ansible_test/
+        dest: /home/sniper/test/
+      delegate_to: "{{ inventory_hostname }}"
