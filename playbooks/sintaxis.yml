@@ -1,0 +1,12 @@
+- name: Trabajando con variables.
+  hosts: Tools
+  vars:
+    - ip: 127.0.0.55
+    - nombre: mauricio
+    - apellido: carrillo
+  tasks:
+    - debug:
+        var: ip
+    - debug:
+        var: nombre
+    - debug: ["var:apellido","var:nombre"]

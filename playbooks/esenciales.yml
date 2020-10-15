@@ -1,0 +1,12 @@
+# El separados es : y es posible utilizar los siguientes caracteres &,!
+# & = Incluye la coincidencia de ambos grupos .Nota debe estar en ambos sino marcara error.
+# ! = Incluye solo los elementos del primer grupo que no este en el segundo
+- name: Probando comandos esenciales de ansible
+  hosts: Production:&Staging
+ #hosts: Production:!Staging
+  tasks:
+    - name: Copiar un archivo
+      ping:
+
+
+  

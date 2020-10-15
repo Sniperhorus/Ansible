@@ -1,0 +1,13 @@
+# Utilizamos variables y el modulo template
+# Nota para usar el modulo template es necesario crear un folder con este nombre y agregar los archivos
+# Ya que este modulo solo trabaja de local a remoto y no de remoto a remoto.
+
+- name: Trabajando con variables.
+  hosts: Tools
+  vars:
+    - ip: 127.0.0.55
+  tasks:
+    - name: Generando nuevo archivo
+      template:
+       src: /mnt/d/Courses/Ansible/playbooks/templates/file.j2
+       dest: /home/sniper/test

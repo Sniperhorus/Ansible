@@ -8,3 +8,11 @@
         src: /home/sniper/ansible_test/
         dest: /home/sniper/test/
       delegate_to: "{{ inventory_hostname }}"
+
+    
+#remote_src
+#Influence whether src needs to be transferred or already is present remotely.
+#If no, it will search for src at originating/master machine.
+#If yes it will go to the remote/target machine for the src.
+#remote_src supports recursive copying as of version 2.8.
+#remote_src only works with mode=preserve as of version 2.6.
