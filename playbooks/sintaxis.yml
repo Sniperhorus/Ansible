@@ -9,4 +9,4 @@
         var: ip
     - debug:
         var: nombre
-    - debug: ["var:apellido","var:nombre"]
+   
