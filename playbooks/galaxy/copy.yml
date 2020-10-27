@@ -1,0 +1,4 @@
+-   name: ejecutando roles
+    hosts: xubuntu
+    roles:
+        - copy

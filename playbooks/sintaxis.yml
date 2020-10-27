@@ -1,5 +1,5 @@
 - name: Trabajando con variables.
-  hosts: Tools
+  hosts: xubuntu
   vars:
     - ip: 127.0.0.55
     - nombre: mauricio
@@ -9,4 +9,3 @@
         var: ip
     - debug:
         var: nombre
-   

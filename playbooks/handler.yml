@@ -1,0 +1,16 @@
+-   name: actualizar configuracion sshd_condifg.
+    hosts: xubuntu
+    tasks:
+     - name: copiar fichero
+       copy:
+          remote_src: true
+          src: /home/mauricio/Desktop/test
+          dest: /home/mauricio/Desktop/test2
+       notify: restart_sshd
+    handlers:
+        -   name: restart_sshd # use the same name you used on notify
+            become: yes
+            service:
+                name: sshd
+                state: restarted  # needs to check vault in order to store password this still not work as expected due to sudo pass
+

@@ -1,0 +1,6 @@
+-   name: copiar fichero
+    copy:
+        src: prueba.txt
+        dest: /home/mauricio/Desktop/tes2
+      
+    
