@@ -1,0 +1,5 @@
+-   name: fresh installation
+    hosts: Tools:dmgr
+    roles:
+        - {role: apache2, when: ansible_fqdn == "tools"}
+        - {role: git, when: ansible_fqdn == "dmgr"}

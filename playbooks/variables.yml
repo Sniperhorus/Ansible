@@ -6,6 +6,7 @@
   hosts: Tools
   vars:
     - ip: 127.0.0.55
+    - fq: "{{ansible_fqdn}}"
   tasks:
     - name: Generando nuevo archivo
       template:
