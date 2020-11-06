@@ -1,0 +1,19 @@
+- name: Create demo user
+  become: yes
+  become_method: sudo
+  vars:
+    users:
+    - username: demo
+      password: $6$pTpaEDHweswcO86u$MuAiSx/iHxmV2jSvmNzXQYIz1lYIMCeP5KtmZQnx6mgJVfweP6oC8nMQQ9QeLc821YV50fh6yMzOjUCxY0lIq.
+  tasks:
+    - name: Create user demo
+      user:
+          name: "{{ item.username }}"
+          shell: /bin/bash
+          createhome: yes
+          group: sniper
+          generate_ssh_key: yes
+          ssh_key_bits: 2048
+          password: "{{ item.password }}"
+          update_password: always
+      with_items: "{{ users }}"

@@ -1,0 +1,5 @@
+-   name: include tasks
+    include: install_loops.yml
+
+-   name: include another task
+    include: user_loops.yml
