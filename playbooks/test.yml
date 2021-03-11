@@ -8,8 +8,6 @@
         src: /home/sniper/ansible_test/
         dest: /home/sniper/test/
       delegate_to: "{{ inventory_hostname }}"
-
-    
 #remote_src
 #Influence whether src needs to be transferred or already is present remotely.
 #If no, it will search for src at originating/master machine.

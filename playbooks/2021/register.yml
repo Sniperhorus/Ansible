@@ -1,0 +1,16 @@
+-   name: using register for the first time
+    hosts: xubuntu
+    tasks:
+    -   name: execute a command
+        command: mkdir march
+        register: keeper
+
+    -   name: show content if command was successul executed
+        debug:
+            var: keeper.stdout
+        when: keeper is changed
+
+#    -   name: regiser value
+#        debug: 
+#            var: keeper.stdout
+

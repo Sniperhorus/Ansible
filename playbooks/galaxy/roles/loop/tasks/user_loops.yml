@@ -1,19 +1,13 @@
-- name: Create demo user
-  become: yes
-  become_method: sudo
-  vars:
-    users:
-    - username: demo
-      password: $6$pTpaEDHweswcO86u$MuAiSx/iHxmV2jSvmNzXQYIz1lYIMCeP5KtmZQnx6mgJVfweP6oC8nMQQ9QeLc821YV50fh6yMzOjUCxY0lIq.
-  tasks:
-    - name: Create user demo
-      user:
-          name: "{{ item.username }}"
-          shell: /bin/bash
-          createhome: yes
-          group: sniper
-          generate_ssh_key: yes
-          ssh_key_bits: 2048
-          password: "{{ item.password }}"
-          update_password: always
-      with_items: "{{ users }}"
+-   name: create users
+    become: true
+    vars:
+    # created with:
+    # python -c 'import crypt; print crypt.crypt("This is my Password", "$1$SomeSalt$")'
+        password: $6$jZfwycaz$4l7aCeTAA21ONQzEspfs/6NA5biDhXXA.oQ4iERwxImPMdQVIrm2PedNL0dMekpiXpNvdJGp4RWtW0fcip66u1
+    user:
+        name: "{{ item.nombre }}"
+        state: present
+        group: "{{ item.grupo }}"
+    with_items:
+        - { nombre: hual7, grupo: sniper, password: "{{password}}" }
+        #- { nombre: claudia, grupo: sniper}

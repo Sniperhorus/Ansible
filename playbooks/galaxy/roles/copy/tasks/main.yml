@@ -1,6 +1,6 @@
 -   name: copiar fichero
     copy:
-        src: prueba.txt
+        src: hello.vault
         dest: /home/mauricio/Desktop/tes2
       
     
